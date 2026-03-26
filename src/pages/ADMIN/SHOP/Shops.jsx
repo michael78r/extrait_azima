@@ -164,7 +164,7 @@ function Shops() {
                         showConfirmButton: false,
                         timer: 1500
                     })
-                    fetchShopsLists()
+                    // fetchShopsLists()
                     .then(data => {
                         setShopsLists(data);
                         setLoading(false);

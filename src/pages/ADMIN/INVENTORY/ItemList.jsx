@@ -10,7 +10,7 @@ const ItemList = () =>{
         fetchInventoriesList()
         .then(data => {
             setInventories(data);
-            setLoading(false);
+            // setLoading(false);
           })
           .catch(error => {
             console.log(error);

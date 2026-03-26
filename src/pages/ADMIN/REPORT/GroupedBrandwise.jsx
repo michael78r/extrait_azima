@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Autocomplete, TextField, Select, MenuItem, Backdrop, CircularProgress, TablePagination } from '@mui/material';
-import { fetchPurchaseLists } from '../PURCHASE/ApiPurchaseLists';
 import LayoutAdmin from '../../LayoutAdmin';
 import formaterNombre from '../../formaterNombre';
 import { m } from 'framer-motion';
 import ExportGroupedShop from '../../ExportGroupedShop';
+
+const DATA = [{ "id": 105, "ItemNumber": "0", "CartonNumber": "20", "Totalitemvalue": 0, "Totalctnsvalue": 4596000, "Totalvalue": 4596000, "BoxNumber": "0", "BottleNumber": "0", "Totalboxvalue": "0", "SacNumber": "0", "Totalsacvalue": 0, "Totalbottlevalue": 0, "pricectn": 229800, "pricesac": 0, "pricebtl": 0, "pricebox": 11490, "priceitem": 0, "IdBrand": { "id": 21, "Brand": " Cahier Champion Pm 192pge (20pkt x 5pcs)", "Pricectns": 229800, "Pricebox": 11490, "Pricebottle": 0, "Priceitem": 0, "Pricesac": 0 }, "invoice": { "id": 2234, "date": "2025-07-08T08:53:15+02:00", "Label": "2025\/JUL\/LANTO\/7", "Amount": 4596000, "Latitude": -18.960339188274, "Longitude": 47.531877005858, "cashAmount": 0, "creditAmount": 4596000, "etat": 1, "Sales": { "id": 2, "Name": "LANTO", "Contact": "", "Address": "", "canSellCash": false, "isCashvan": false }, "Shop": { "id": 701, "Section": "Analamahintsy", "Location": "Analamahintsy", "ShopName": "Armand - Analamahintsy", "Phone": "033 12 354 72", "CreditLimit": 30, "CreditDays": 3, "nameManagerShop": "", "longitude": null, "latitude": null } } }]
 
 function compterTotalMois(groupedData) {
     const totalMois = Array(12).fill(0);
@@ -389,7 +390,7 @@ const GroupedBrandwise = () => {
     useEffect(() => {
         const loadSalesData = async () => {
             setLoading(true);
-            const data = await fetchPurchaseLists();
+            const data = DATA;
             setSalesData(data);
             setFilteredData(data);
             setLoading(false);

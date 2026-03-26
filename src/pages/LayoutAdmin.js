@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { useState } from 'react';
-import companyLogo from '../../public/img/logo.png';
-import profileImage from '../../public/img/profile-img.jpg';
+// import companyLogo from '../../public/img/logo.png';
+// import profileImage from '../../public/img/profile-img.jpg';
 import { useNavigate, useLocation } from 'react-router-dom';
 import MyContext from './MyContext';
 import axios from 'axios';
