@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Autocomplete, TextField, Select, MenuItem, Backdrop, CircularProgress,Button } from '@mui/material';
+import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Autocomplete, TextField, Backdrop, CircularProgress,Button } from '@mui/material';
 import { fetchPurchaseLists } from '../PURCHASE/ApiPurchaseLists';
 import LayoutAdmin from '../../LayoutAdmin';
 import ExportBrandwiseToExcel from '../../ExportBrandwiseToExcel';
@@ -12,7 +12,7 @@ const months = [
 ];
 
 const SalesTable = ({ filteredData,startDate,endDate}) => {
-    const formatter = new Intl.NumberFormat('fr-FR');
+    // const formatter = new Intl.NumberFormat('fr-FR');
 
     const filterMonthsBetweenDates = (startDate, endDate) => {
    

@@ -16,72 +16,72 @@ import {
   CircularProgress,
   TablePagination
 } from '@mui/material';
-import { fetchAllPurchaseLists } from '../PURCHASE/ApiAllPurchaseLists';
+// import { fetchAllPurchaseLists } from '../PURCHASE/ApiAllPurchaseLists';
 import LayoutAdmin from '../../LayoutAdmin';
 import formaterNombre from '../../formaterNombre';
 
-const DATA = [{"purchase_id":105,"id_brand_id":21,"invoice_id":2234,"ItemNumber":0,"CartonNumber":20,"Totalitemvalue":0,"Totalctnsvalue":4596000,"Totalvalue":4596000,"BoxNumber":0,"Totalboxvalue":0,"SacNumber":0,"Totalsacvalue":0,"BottleNumber":0,"Totalbottlevalue":0,"id_brand_cashvan_id":0,"pricectn":229800,"pricesac":0,"pricebtl":0,"pricebox":11490,"priceitem":0,"id":701,"Brand":" Cahier Champion Pm 192pge (20pkt x 5pcs)","Pricectns":229800,"Pricebox":11490,"Priceitem":0,"Pricesac":0,"Pricebottle":0,"sales_id":2,"shop_id":701,"date":"2025-07-08 08:53:15","Label":"2025\/JUL\/LANTO\/7","Amount":4596000,"Latitude":-18.960339188274,"Longitude":47.531877005858,"cashAmount":0,"creditAmount":4596000,"Name":"LANTO","Contact":"","Address":"","canSellCash":0,"isCashvan":0,"sales_men_id":2,"Section":"Analamahintsy","Location":"Analamahintsy","ShopName":"Armand - Analamahintsy","Phone":"033 12 354 72","CreditLimit":30,"CreditDays":3,"city_id":1,"nameManagerShop":"","longitude":"-","latitude":"-"},{"purchase_id":104,"id_brand_id":1,"invoice_id":2233,"ItemNumber":0,"CartonNumber":20,"Totalitemvalue":0,"Totalctnsvalue":2012800,"Totalvalue":2012800,"BoxNumber":0,"Totalboxvalue":0,"SacNumber":0,"Totalsacvalue":0,"BottleNumber":0,"Totalbottlevalue":0,"id_brand_cashvan_id":0,"pricectn":100640,"pricesac":0,"pricebtl":0,"pricebox":6290,"priceitem":0,"id":701,"Brand":" Bonjour LolliPop 14 Grm Ochra Max (48 Pcs X 16 Pkt)","Pricectns":100640,"Pricebox":6290,"Priceitem":0,"Pricesac":0,"Pricebottle":0,"sales_id":2,"shop_id":701,"date":"2025-07-08 08:52:50","Label":"2025\/JUL\/LANTO\/6","Amount":2012800,"Latitude":-18.960339188274,"Longitude":47.531877005858,"cashAmount":0,"creditAmount":2012800,"Name":"LANTO","Contact":"","Address":"","canSellCash":0,"isCashvan":0,"sales_men_id":2,"Section":"Analamahintsy","Location":"Analamahintsy","ShopName":"Armand - Analamahintsy","Phone":"033 12 354 72","CreditLimit":30,"CreditDays":3,"city_id":1,"nameManagerShop":"","longitude":"-","latitude":"-"},{"purchase_id":103,"id_brand_id":56,"invoice_id":2232,"ItemNumber":0,"CartonNumber":20,"Totalitemvalue":0,"Totalctnsvalue":2400000,"Totalvalue":2400000,"BoxNumber":0,"Totalboxvalue":0,"SacNumber":0,"Totalsacvalue":0,"BottleNumber":0,"Totalbottlevalue":0,"id_brand_cashvan_id":0,"pricectn":120000,"pricesac":0,"pricebtl":0,"pricebox":0,"priceitem":550,"id":701,"Brand":"Milk Bonjour Powder (240 Pcs X 18 Grm)","Pricectns":120000,"Pricebox":0,"Priceitem":550,"Pricesac":0,"Pricebottle":0,"sales_id":2,"shop_id":701,"date":"2025-07-08 08:36:24","Label":"2025\/JUL\/LANTO\/5","Amount":2400000,"Latitude":-18.960339188274,"Longitude":47.531877005858,"cashAmount":0,"creditAmount":2400000,"Name":"LANTO","Contact":"","Address":"","canSellCash":0,"isCashvan":0,"sales_men_id":2,"Section":"Analamahintsy","Location":"Analamahintsy","ShopName":"Armand - Analamahintsy","Phone":"033 12 354 72","CreditLimit":30,"CreditDays":3,"city_id":1,"nameManagerShop":"","longitude":"-","latitude":"-"}]
+const DATA = [{"purchase_id":105,"id_brand_id":21,"invoice_id":2234,"ItemNumber":0,"CartonNumber":20,"Totalitemvalue":0,"Totalctnsvalue":4596000,"Totalvalue":4596000,"BoxNumber":0,"Totalboxvalue":0,"SacNumber":0,"Totalsacvalue":0,"BottleNumber":0,"Totalbottlevalue":0,"id_brand_cashvan_id":0,"pricectn":229800,"pricesac":0,"pricebtl":0,"pricebox":11490,"priceitem":0,"id":701,"Brand":" Cahier Champion Pm 192pge (20pkt x 5pcs)","Pricectns":229800,"Pricebox":11490,"Priceitem":0,"Pricesac":0,"Pricebottle":0,"sales_id":2,"shop_id":701,"date":"2025-07-08 08:53:15","Label":"2025/JUL/LANTO/7","Amount":4596000,"Latitude":-18.960339188274,"Longitude":47.531877005858,"cashAmount":0,"creditAmount":4596000,"Name":"LANTO","Contact":"","Address":"","canSellCash":0,"isCashvan":0,"sales_men_id":2,"Section":"Analamahintsy","Location":"Analamahintsy","ShopName":"Armand - Analamahintsy","Phone":"033 12 354 72","CreditLimit":30,"CreditDays":3,"city_id":1,"nameManagerShop":"","longitude":"-","latitude":"-"},{"purchase_id":104,"id_brand_id":1,"invoice_id":2233,"ItemNumber":0,"CartonNumber":20,"Totalitemvalue":0,"Totalctnsvalue":2012800,"Totalvalue":2012800,"BoxNumber":0,"Totalboxvalue":0,"SacNumber":0,"Totalsacvalue":0,"BottleNumber":0,"Totalbottlevalue":0,"id_brand_cashvan_id":0,"pricectn":100640,"pricesac":0,"pricebtl":0,"pricebox":6290,"priceitem":0,"id":701,"Brand":" Bonjour LolliPop 14 Grm Ochra Max (48 Pcs X 16 Pkt)","Pricectns":100640,"Pricebox":6290,"Priceitem":0,"Pricesac":0,"Pricebottle":0,"sales_id":2,"shop_id":701,"date":"2025-07-08 08:52:50","Label":"2025/JUL/LANTO/6","Amount":2012800,"Latitude":-18.960339188274,"Longitude":47.531877005858,"cashAmount":0,"creditAmount":2012800,"Name":"LANTO","Contact":"","Address":"","canSellCash":0,"isCashvan":0,"sales_men_id":2,"Section":"Analamahintsy","Location":"Analamahintsy","ShopName":"Armand - Analamahintsy","Phone":"033 12 354 72","CreditLimit":30,"CreditDays":3,"city_id":1,"nameManagerShop":"","longitude":"-","latitude":"-"},{"purchase_id":103,"id_brand_id":56,"invoice_id":2232,"ItemNumber":0,"CartonNumber":20,"Totalitemvalue":0,"Totalctnsvalue":2400000,"Totalvalue":2400000,"BoxNumber":0,"Totalboxvalue":0,"SacNumber":0,"Totalsacvalue":0,"BottleNumber":0,"Totalbottlevalue":0,"id_brand_cashvan_id":0,"pricectn":120000,"pricesac":0,"pricebtl":0,"pricebox":0,"priceitem":550,"id":701,"Brand":"Milk Bonjour Powder (240 Pcs X 18 Grm)","Pricectns":120000,"Pricebox":0,"Priceitem":550,"Pricesac":0,"Pricebottle":0,"sales_id":2,"shop_id":701,"date":"2025-07-08 08:36:24","Label":"2025/JUL/LANTO/5","Amount":2400000,"Latitude":-18.960339188274,"Longitude":47.531877005858,"cashAmount":0,"creditAmount":2400000,"Name":"LANTO","Contact":"","Address":"","canSellCash":0,"isCashvan":0,"sales_men_id":2,"Section":"Analamahintsy","Location":"Analamahintsy","ShopName":"Armand - Analamahintsy","Phone":"033 12 354 72","CreditLimit":30,"CreditDays":3,"city_id":1,"nameManagerShop":"","longitude":"-","latitude":"-"}]
 
-function compterTotalMois(groupedData) {
-  const totalMois = Array(12).fill(0);
+// function compterTotalMois(groupedData) {
+//   const totalMois = Array(12).fill(0);
 
-  for (const categorie of Object.values(groupedData)) {
-    for (const metrique of Object.values(categorie)) {
-      for (let mois = 0; mois < 12; mois++) {
-        if (metrique[mois] !== undefined) {
-          totalMois[mois] += metrique[mois] || 0;
-          // totalMois[mois] += parseInt(metrique[mois]) || 1;
-          // console.log(metrique[0]);
-        }
-      }
-    }
-  }
+//   for (const categorie of Object.values(groupedData)) {
+//     for (const metrique of Object.values(categorie)) {
+//       for (let mois = 0; mois < 12; mois++) {
+//         if (metrique[mois] !== undefined) {
+//           totalMois[mois] += metrique[mois] || 0;
+//           // totalMois[mois] += parseInt(metrique[mois]) || 1;
+//           // console.log(metrique[0]);
+//         }
+//       }
+//     }
+//   }
 
-  return totalMois;
-}
+//   return totalMois;
+// }
 
-function calculerSommes(tableaux) {
-  return tableaux.map((ligne, index) => {
-    const str = typeof ligne === 'string' ? ligne : String(ligne);
-    const somme = str
-      .split(',')
-      .map(n => parseInt(n, 10))
-      .reduce((acc, val) => acc + val, 0);
-    return `indice ${index}: ${somme}`;
-  });
-}
+// function calculerSommes(tableaux) {
+//   return tableaux.map((ligne, index) => {
+//     const str = typeof ligne === 'string' ? ligne : String(ligne);
+//     const somme = str
+//       .split(',')
+//       .map(n => parseInt(n, 10))
+//       .reduce((acc, val) => acc + val, 0);
+//     return `indice ${index}: ${somme}`;
+//   });
+// }
 
 
-function totalyear(total) {
-  let res = 0;
-  for (let i = 0; i < total.length; i++) {
-    res += total[i];
-  }
-  return res;
-}
+// function totalyear(total) {
+//   let res = 0;
+//   for (let i = 0; i < total.length; i++) {
+//     res += total[i];
+//   }
+//   return res;
+// }
 
-function calculerTotauxParMetrique(data) {
-  const totaux = {
-    firstMetric: Array(12).fill(0),
-    secondMetric: Array(12).fill(0),
-    thirdMetric: Array(12).fill(0),
-    fourthMetric: Array(12).fill(0),
-    fifthMetric: Array(12).fill(0)
-  };
+// function calculerTotauxParMetrique(data) {
+//   const totaux = {
+//     firstMetric: Array(12).fill(0),
+//     secondMetric: Array(12).fill(0),
+//     thirdMetric: Array(12).fill(0),
+//     fourthMetric: Array(12).fill(0),
+//     fifthMetric: Array(12).fill(0)
+//   };
 
-  // Parcourir tous les produits
-  for (const produit of Object.values(data)) {
-    // Pour chaque métrique du produit
-    for (const [metrique, valeurs] of Object.entries(produit)) {
-      // Ajouter chaque valeur mensuelle au total correspondant
-      for (let mois = 0; mois < 12; mois++) {
-        totaux[metrique][mois] += valeurs[mois] || 0;
-      }
-    }
-  }
+//   // Parcourir tous les produits
+//   for (const produit of Object.values(data)) {
+//     // Pour chaque métrique du produit
+//     for (const [metrique, valeurs] of Object.entries(produit)) {
+//       // Ajouter chaque valeur mensuelle au total correspondant
+//       for (let mois = 0; mois < 12; mois++) {
+//         totaux[metrique][mois] += valeurs[mois] || 0;
+//       }
+//     }
+//   }
 
-  return totaux;
-}
+//   return totaux;
+// }
 const months = [
   'January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
@@ -174,7 +174,7 @@ const SalesTable = ({ filteredData, displayType, startDate, endDate }) => {
 
   // const total_year = totalyear(total)
 
-  const type = displayType === 'number' ? "quantity" : "Ar"
+  // const type = displayType === 'number' ? "quantity" : "Ar"
 
 
   const headers = displayType === 'number'
