@@ -13,7 +13,6 @@ const SalesTable = ({ filteredData}) => {
           const brand = item.IdBrand.Brand;
       
           if (!result[brand]) {
-            // Initialisation des valeurs associées à chaque marque
             result[brand] = {
               CartonNumber: 0, // Valeur initiale
               BoxNumber: 0,
@@ -23,7 +22,7 @@ const SalesTable = ({ filteredData}) => {
               Totalboxvalue: 0,
               Totalitemvalue: 0,
               Totalsacvalue: 0,
-              PriceCtn: item.IdBrand.Pricectns,  // Valeur de prix selon la marque
+              PriceCtn: item.IdBrand.Pricectns,  
               PriceBox: item.IdBrand.Pricebox,
               PriceItem: item.IdBrand.Priceitem,
               PriceSac: item.IdBrand.Pricesac
@@ -43,17 +42,9 @@ const SalesTable = ({ filteredData}) => {
       
         return result;
       }, [filteredData]);
-      
-    
-   
-
-
 
     return (
         <>
-       
-       
-      
         <TableContainer component={Paper} sx={{ border: '2px solid black' , mt : '50px' }}>
            
             <Table>
