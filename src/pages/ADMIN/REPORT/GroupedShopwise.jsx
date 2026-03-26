@@ -5,10 +5,13 @@ import LayoutAdmin from '../../LayoutAdmin';
 import formaterNombre from '../../formaterNombre';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
+
 const months = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
 ];
+
+const DATA = [{ "id": 105, "ItemNumber": "0", "CartonNumber": "20", "Totalitemvalue": 0, "Totalctnsvalue": 4596000, "Totalvalue": 4596000, "BoxNumber": "0", "BottleNumber": "0", "Totalboxvalue": "0", "SacNumber": "0", "Totalsacvalue": 0, "Totalbottlevalue": 0, "pricectn": 229800, "pricesac": 0, "pricebtl": 0, "pricebox": 11490, "priceitem": 0, "IdBrand": { "id": 21, "Brand": " Iphone 13pro max", "Pricectns": 229800, "Pricebox": 11490, "Pricebottle": 0, "Priceitem": 0, "Pricesac": 0 }, "invoice": { "id": 2234, "date": "2025-07-08T08:53:15+02:00", "Label": "2025\/JUL\/LANTO\/7", "Amount": 4596000, "Latitude": -18.960339188274, "Longitude": 47.531877005858, "cashAmount": 0, "creditAmount": 4596000, "etat": 1, "Sales": { "id": 2, "Name": "LANTO", "Contact": "", "Address": "", "canSellCash": false, "isCashvan": false }, "Shop": { "id": 701, "Section": "Analamahintsy", "Location": "Analamahintsy", "ShopName": "Armand - Analamahintsy", "Phone": "033 12 354 72", "CreditLimit": 30, "CreditDays": 3, "nameManagerShop": "", "longitude": null, "latitude": null } } },{"id":104,"ItemNumber":"0","CartonNumber":"20","Totalitemvalue":0,"Totalctnsvalue":2012800,"Totalvalue":2012800,"BoxNumber":"0","BottleNumber":"0","Totalboxvalue":"0","SacNumber":"0","Totalsacvalue":0,"Totalbottlevalue":0,"pricectn":100640,"pricesac":0,"pricebtl":0,"pricebox":6290,"priceitem":0,"IdBrand":{"id":1,"Brand":" PlayStation 5 Edition","Pricectns":100640,"Pricebox":6290,"Pricebottle":0,"Priceitem":0,"Pricesac":0},"invoice":{"id":2233,"date":"2025-07-08T08:52:50+02:00","Label":"2025\/JUL\/LANTO\/6","Amount":2012800,"Latitude":-18.960339188274,"Longitude":47.531877005858,"cashAmount":0,"creditAmount":2012800,"etat":2,"Sales":{"id":2,"Name":"LANTO","Contact":"","Address":"","canSellCash":false,"isCashvan":false},"Shop":{"id":701,"Section":"Analamahintsy","Location":"Analamahintsy","ShopName":"Armand - Analamahintsy","Phone":"033 12 354 72","CreditLimit":30,"CreditDays":3,"nameManagerShop":"","longitude":null,"latitude":null}}},{"id":103,"ItemNumber":"0","CartonNumber":"20","Totalitemvalue":0,"Totalctnsvalue":2400000,"Totalvalue":2400000,"BoxNumber":"0","BottleNumber":"0","Totalboxvalue":"0","SacNumber":"0","Totalsacvalue":0,"Totalbottlevalue":0,"pricectn":120000,"pricesac":0,"pricebtl":0,"pricebox":0,"priceitem":550,"IdBrand":{"id":56,"Brand":"Samsung Galaxy s22 ultra","Pricectns":120000,"Pricebox":0,"Pricebottle":0,"Priceitem":550,"Pricesac":0},"invoice":{"id":2232,"date":"2025-07-08T08:36:24+02:00","Label":"2025\/JUL\/LANTO\/5","Amount":2400000,"Latitude":-18.960339188274,"Longitude":47.531877005858,"cashAmount":0,"creditAmount":2400000,"etat":2,"Sales":{"id":2,"Name":"LANTO","Contact":"","Address":"","canSellCash":false,"isCashvan":false},"Shop":{"id":701,"Section":"Analamahintsy","Location":"Analamahintsy","ShopName":"Armand - Analamahintsy","Phone":"033 12 354 72","CreditLimit":30,"CreditDays":3,"nameManagerShop":"","longitude":null,"latitude":null}}}];
 
 function compterTotalMois(groupedData) {
     const totalMois = Array(12).fill(0);
@@ -421,7 +424,7 @@ const GroupedShopwise = () => {
     useEffect(() => {
         setLoading(true);
         const loadSalesData = async () => {
-            const data = await fetchPurchaseLists();
+            const data = DATA;
             setSalesData(data);
             setFilteredData(data); // Initially set filtered data to all sales data
         };

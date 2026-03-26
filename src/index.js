@@ -39,10 +39,10 @@ import '@fontsource/roboto/700.css';
 // import EditPurchase from './pages/ADMIN/PURCHASE/EditPurchase';
 // import ExporterBon from './pages/ADMIN/PURCHASE/ExporterBon';
 // import ExporterCashVan from './pages/ADMIN/PURCHASE/ExporterCashVan';
-// import Brandwise from './pages/ADMIN/REPORT/Brandwise';
-// import Shopwise from './pages/ADMIN/REPORT/Shopwise';
+import Brandwise from './pages/ADMIN/REPORT/Brandwise';
+import Shopwise from './pages/ADMIN/REPORT/Shopwise';
 import GroupedBrandwise from './pages/ADMIN/REPORT/GroupedBrandwise';
-// import GroupedShopwise from './pages/ADMIN/REPORT/GroupedShopwise';
+import GroupedShopwise from './pages/ADMIN/REPORT/GroupedShopwise';
 // import PaidShop from './pages/ADMIN/SHOP/PaidShop';
 // import AddUser from './pages/ADMIN/USERS/AddUser';
 // import AddUserSalesMan from './pages/ADMIN/USERS/AddUserSalesMan';
@@ -58,12 +58,12 @@ import GroupedBrandwise from './pages/ADMIN/REPORT/GroupedBrandwise';
 // import ListUser from './pages/ADMIN/USERS/ListUser';
 // import UpdateUser from './pages/ADMIN/USERS/UpdateUser';
 // import MoveItem from './pages/ADMIN/INVENTORY/MoveItem';
-// import TodayReport from './pages/ADMIN/REPORT/TodayReport';
+import TodayReport from './pages/ADMIN/REPORT/TodayReport';
 // import AddaPurchaseByInvoice from './pages/ADMIN/PURCHASE/AddaPurchaseByInvoice';
 
 // import AddPromotion from './pages/ADMIN/PROMOTION/AddPromotion';
 // import Promotion from './pages/ADMIN/PROMOTION/Promotions';
-// import AllGroupedShopwise from './pages/ADMIN/REPORT/AllGroupedShopwise';
+import AllGroupedShopwise from './pages/ADMIN/REPORT/AllGroupedShopwise';
 
 function Main() {
     // const { token, setToken } = useToken();
@@ -86,12 +86,12 @@ function Main() {
             <Routes>
                 {/* <Route element={<PrivateRoutes monRole="ADMIN" roleAutorise={["ADMIN"]} />}> */}
                     {/* <Route exact path="/" element={<Dashboard/>} /> */}
-                    <Route exact path="/test" element={<GroupedBrandwise/>} />
-                    {/* <Route exact path="/groupedshopwise" element={<GroupedShopwise/>} />
+                    <Route exact path="/" element={<GroupedBrandwise/>} />
+                    <Route exact path="/groupedshopwise" element={<GroupedShopwise/>} />
                     <Route exact path="/allgroupedshopwise" element={<AllGroupedShopwise/>} />
                     <Route exact path="/shopwise" element={<Shopwise/>} />
                     <Route exact path="brandwise" element={<Brandwise/>} />
-                    <Route exact path="/todayreport" element={<TodayReport/>} /> */}
+                    <Route exact path="/todayreport" element={<TodayReport/>} />
                     {/* CITY */}
                     {/* <Route exact path="/city" element={<City/>} />
                     <Route exact path="/addcity" element={<AddCity/>} />
