@@ -10,8 +10,8 @@ const LayoutAdmin =({children}) =>{
     const location = useLocation();
     const isActive = (path) => location.pathname === path;
     const [depart, setDepart] = useState("true");
-    const {username1} = useContext(MyContext);
-    const [maFonction, setMafonction] = useState('');
+    // const ADMIN = useContext(MyContext);
+    // const [maFonction, setMafonction] = useState('');
 
     const handleClick = () => {
         setDepart(!depart);
@@ -31,17 +31,17 @@ const LayoutAdmin =({children}) =>{
         navigate(`/detailuser`);
     };
 
-    useEffect(() => {
-        axios.get(`/api/user/${username1}`)
-        .then(function (response) {
-          const infouser = response.data;
-          setMafonction(infouser.Fonction);
-          console.log('fonction = '+maFonction);
-        })
-        .catch(function (error) {
-          console.log(error);
-        })
-    }, [])
+    // useEffect(() => {
+    //     axios.get(`/api/user/$ADMIN`)
+    //     .then(function (response) {
+    //       const infouser = response.data;
+    //       setMafonction(infouser.Fonction);
+    //       console.log('fonction = '+maFonction);
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     })
+    // }, [])
 
     return(
         <div className={depart && "toggle-sidebar"}>
@@ -63,13 +63,13 @@ const LayoutAdmin =({children}) =>{
                     </li>
                     <li className="nav-item dropdown pe-3">
                         <a className="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown"> 
-                            <span className="d-none d-md-block dropdown-toggle ps-2">{username1}</span>
+                            <span className="d-none d-md-block dropdown-toggle ps-2">ADMIN</span>
                         </a>
 
                         <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                             <li className="dropdown-header">
-                                <h6>{username1}</h6>
-                                <span>{maFonction}</span>
+                                <h6>Test</h6>
+                                <span>ADMIN</span>
                             </li>
                             <li>
                                 <hr className="dropdown-divider" />
